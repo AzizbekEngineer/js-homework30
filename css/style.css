@@ -30,10 +30,12 @@ header {
 }
 
 .navbar {
-  height: 70px;
   display: flex;
+  padding: 10px 0;
   align-items: center;
   justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 main {
@@ -134,7 +136,6 @@ main {
 }
 
 .dailyWeather {
-  overflow: auto;
   max-width: 800px;
   margin-top: 20px;
   display: flex;
@@ -144,9 +145,18 @@ main {
   background-size: cover;
   padding: 40px;
   border-radius: 10px;
+  overflow: auto;
+}
+.dailyWeather::-webkit-scrollbar {
+  height: 8px;
+}
+.dailyWeather::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3333333333);
+  border-radius: 10px;
 }
 
 .dailyWeather__item {
+  min-width: 580px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -169,4 +179,10 @@ main {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+@media (max-width: 525px) {
+  .navbar {
+    gap: 15px;
+  }
 }
